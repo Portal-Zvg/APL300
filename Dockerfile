@@ -15,7 +15,7 @@ WORKDIR "/src/."
 RUN dotnet build "Coding.csproj" -c $configuration -o /app/build
 
 FROM build AS publish
-ARG configuration=Release
+ARG configuration=Releasedo
 RUN dotnet publish "Coding.csproj" -c $configuration -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
